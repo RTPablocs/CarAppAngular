@@ -1,0 +1,12 @@
+<div class="container">
+  <ng-container *ngFor="let slide of slides; let i = index">
+    <img *ngIf="i === initialSlide" [src]="slide.src" class="slide_img">
+  </ng-container>
+  <div class="arrow_container">
+    <fa-icon class="right-arrow" (click)="leftClick()" [icon]="faChevronLeft" size="3x"
+             [styles]="{'color': 'white'}"></fa-icon>
+    <fa-icon class="left-arrow" (click)="rightClick()" [icon]="faChevronRight" size="3x"
+             [styles]="{'color': 'white'}"></fa-icon>
+
+  </div>
+</div>
