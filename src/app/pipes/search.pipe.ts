@@ -10,12 +10,10 @@ export class SearchPipe implements PipeTransform {
       return [];
     }
     if (!searchText){
-      console.log(items);
       return items;
     }
     return items.filter(item => {
-      const values = Object.values(item);
-      if (values.includes(searchText)){
+      if (item.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())){
         return item;
       }
     });
