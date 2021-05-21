@@ -8,9 +8,13 @@ import {Component, OnInit} from '@angular/core';
 export class ShopComponent implements OnInit {
   content = [
     {id: 1, name: 'AAA', brand: 'DSDF'},
-    {id: 1, name: 'ASA', brand: 'DF'},
-    {id: 1, name: 'AFA', brand: 'DDF'},
-    {id: 1, name: 'AGA', brand: 'DASF'}
+    {id: 2, name: 'ASA', brand: 'DF'},
+    {id: 3, name: 'AFA', brand: 'DDF'},
+    {id: 4, name: 'AGA', brand: 'DASF'},
+    {id: 1, name: 'AAA', brand: 'DSDF'},
+    {id: 2, name: 'ASA', brand: 'DF'},
+    {id: 3, name: 'AFA', brand: 'DDF'},
+    {id: 4, name: 'AGA', brand: 'DASF'}
   ];
   search = '';
 
