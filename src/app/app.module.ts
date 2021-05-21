@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { ShopComponent } from './pages/shop/shop.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { CardsComponent } from './components/cards/cards.component';
+import { FilteringPipe } from './pipes/filtering.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CardsComponent } from './components/cards/cards.component';
     CategoriesComponent,
     ShopComponent,
     SearchPipe,
-    CardsComponent
+    CardsComponent,
+    FilteringPipe
   ],
   imports: [
     BrowserModule,
