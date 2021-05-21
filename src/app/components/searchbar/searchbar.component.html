@@ -1,6 +1,7 @@
 <div class="container">
-  <input class="search" type="text" placeholder="Search Here!" [(ngModel)]="searchWord">
-  <button class="submit_button" (click)="searchArgument()">
-    <fa-icon [icon]="faSearch" [styles]="{'color':'white'}" size="2x"></fa-icon>
-  </button>
+  <input class="search" type="text" placeholder="Search Here!" [(ngModel)]="searchWord" (keyup)="searchArgument()">
+  <div class="searchterm" *ngIf="searchWord">
+      <p>{{searchWord}}</p>
+      <fa-icon [icon]="faTimes" [styles]="{'color':'white', 'padding':'5px'}" (click)="clearSearch()"></fa-icon>
+  </div>
 </div>
