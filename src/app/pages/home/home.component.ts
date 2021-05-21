@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   public slides = [
     {src: '../assets/images/ultrawide-Ford-GT-car-1880127.jpg'},
@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  ngOnDestroy(): void {
   }
 
 }
