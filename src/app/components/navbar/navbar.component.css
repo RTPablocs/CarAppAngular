@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Urae Nium';
+  src: url("src/assets/urae_nium.ttf") format("truetype");
+}
+
+
+
+
+
+nav {
+  background: #252525;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  border-bottom: 5px solid #DD1540;
+}
+
+a#main_link {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  flex-grow: 2;
+  font-size: 32px !important;
+  font-family: "Urae Nium", sans-serif;
+
+}
+
+
+.NavMenu {
+  font-family: "Urae Nium", sans-serif;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  white-space: nowrap;
+  width: 100vw;
+  justify-content: flex-end;
+}
+
+.LinkAlt {
+  border-radius: 4px;
+  font-size: 20px;
+  background: #DD1540;
+  padding: 10px 22px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.Link{
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 10px 22px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
