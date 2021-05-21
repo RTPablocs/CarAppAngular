@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {faSearch} from '@fortawesome/free-solid-svg-icons/faSearch';
+import {faTimes} from '@fortawesome/free-solid-svg-icons/faTimes';
 
 @Component({
   selector: 'app-searchbar',
@@ -8,7 +8,7 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons/faSearch';
 })
 export class SearchbarComponent implements OnInit {
   @Output() searchCriteria = new EventEmitter<string>();
-  faSearch = faSearch;
+  faTimes = faTimes;
   searchWord = '';
   constructor() {
   }
@@ -17,6 +17,10 @@ export class SearchbarComponent implements OnInit {
   }
 
   searchArgument(): any{
+    this.searchCriteria.emit(this.searchWord);
+  }
+  clearSearch(): void {
+    this.searchWord = '';
     this.searchCriteria.emit(this.searchWord);
   }
 }
