@@ -13,6 +13,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { FilteringPipe } from './pipes/filtering.pipe';
+import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FilteringPipe } from './pipes/filtering.pipe';
     ShopComponent,
     SearchPipe,
     CardsComponent,
-    FilteringPipe
+    FilteringPipe,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
