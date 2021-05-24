@@ -1,43 +1,24 @@
 <div class="main">
   <h2>Filters</h2>
-  <form class="vertical">
-    <label for="">
-      Brand:
+  <form class="vertical" [formGroup]="filters">
+    <label>Brand:</label>
+    <input type="text" formControlName="brand">
+    <label>Model:</label>
+    <input type="text" formControlName="model">
 
-    </label>
-    <input type="text">
-    <label for="">
-      Model:
-    </label>
-    <input type="text">
-    <label for="">Price:</label>
 
-    <div class="container">
-      <select name="" id="" >
-        <option hidden selected>Min</option>
-        <option value="200">200</option>
-      </select>
-      <select name="" id="">
-        <option hidden selected>Max</option>
-        <option value="200">200</option>
-      </select>
+    <div class="vertical">
+      <label>Budget: <input type="number" formControlName="price" value="{{filters.value.price}}" ></label>
+      <input type="range" formControlName="price" min="1000" max="100000" value="{{filters.value.price}}">
     </div>
+      <label>Miles: <input type="number" formControlName="miles" value="{{filters.value.miles}}"></label>
+      <div class="vertical">
+        <input type="range" formControlName="miles" min="1000" max="100000" value="{{filters.value.miles}}">
+      </div>
 
-    <label for="">Miles:</label>
-    <div class="container">
-      <select name="" id="">
-        <option hidden selected>Min</option>
-        <option value="200">200</option>
-      </select>
-      <select name="" id="">
-        <option hidden selected>Max</option>
-        <option value="200">200</option>
-      </select>
-    </div>
-
-    <div class="container">
-      <button>Apply</button>
-      <button>Clear</button>
-    </div>
+      <div class="container">
+        <button (click)="ApplyFilters()">Apply</button>
+        <button (click)="ClearFilters()">Clear</button>
+      </div>
   </form>
 </div>
