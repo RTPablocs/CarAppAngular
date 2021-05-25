@@ -13,7 +13,7 @@ export class SearchPipe implements PipeTransform {
       return items;
     }
     return items.filter(item => {
-      if (item.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())){
+      if (item.model.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())){
         return item;
       }
     });
