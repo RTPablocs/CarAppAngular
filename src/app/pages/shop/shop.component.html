@@ -1,6 +1,6 @@
 <app-searchbar (searchCriteria)="getCriteria($event)"></app-searchbar>
 <div class="grid">
-  <app-cards [Data]="content" [search]="search"></app-cards>
-  <app-filters></app-filters>
+  <app-cards [Data]="content" [search]="search" [filters]="filters"></app-cards>
+  <app-filters (SendFilters)="getFilters($event)"></app-filters>
 </div>
 
