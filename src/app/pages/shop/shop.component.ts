@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Filters} from '../../pipes/filters';
 
 @Component({
   selector: 'app-shop',
@@ -7,16 +8,33 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ShopComponent implements OnInit {
   content = [
-    {id: 1, name: 'AAA', brand: 'DSDF'},
-    {id: 2, name: 'ASA', brand: 'DF'},
-    {id: 3, name: 'AFA', brand: 'DDF'},
-    {id: 4, name: 'AGA', brand: 'DASF'},
-    {id: 1, name: 'AAA', brand: 'DSDF'},
-    {id: 2, name: 'ASA', brand: 'DF'},
-    {id: 3, name: 'AFA', brand: 'DDF'},
-    {id: 4, name: 'AGA', brand: 'DASF'}
+    {id: 1, model: 'AAA', brand: 'DSDF', price: 10444},
+    {id: 2, model: 'ASA', brand: 'DF'},
+    {id: 3, model: 'AFA', brand: 'DDF'},
+    {id: 4, model: 'AGA', brand: 'DASF'},
+    {id: 1, model: 'AAA', brand: 'DSDF'},
+    {id: 2, model: 'ASA', brand: 'DF'},
+    {id: 3, model: 'AFA', brand: 'DDF'},
+    {id: 4, model: 'AGA', brand: 'DASF'},
+    {id: 1, model: 'AAA', brand: 'DSDF'},
+    {id: 2, model: 'ASA', brand: 'DF'},
+    {id: 3, model: 'AFA', brand: 'DDF'},
+    {id: 4, model: 'AGA', brand: 'DASF'},
+    {id: 1, model: 'AAA', brand: 'DSDF'},
+    {id: 2, model: 'ASA', brand: 'DF'},
+    {id: 3, model: 'AFA', brand: 'DDF'},
+    {id: 4, model: 'AGA', brand: 'DASF'},
+    {id: 1, model: 'AAA', brand: 'DSDF'},
+    {id: 2, model: 'ASA', brand: 'DF'},
+    {id: 3, model: 'AFA', brand: 'DDF'},
+    {id: 4, model: 'AGA', brand: 'DASF'},
+    {id: 1, model: 'AAA', brand: 'DSDF'},
+    {id: 2, model: 'ASA', brand: 'DF'},
+    {id: 3, model: 'AFA', brand: 'DDF'},
+    {id: 4, model: 'AGA', brand: 'DASF'}
   ];
   search = '';
+  filters = {};
 
   constructor() {
   }
@@ -24,8 +42,12 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCriteria(criteria: string): any {
+  getCriteria(criteria: string): void {
     this.search = criteria;
   }
 
+  getFilters(filtering: object): void {
+    this.filters = filtering;
+    console.log(this.filters);
+  }
 }
