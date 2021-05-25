@@ -8,7 +8,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CategoriesComponent } from './components/categories/categories.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShopComponent } from './pages/shop/shop.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { CardsComponent } from './components/cards/cards.component';
@@ -29,12 +29,13 @@ import { FiltersComponent } from './components/filters/filters.component';
     FilteringPipe,
     FiltersComponent
   ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        FontAwesomeModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
