@@ -18,6 +18,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     FilteringPipe,
     FiltersComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
     imports: [
         BrowserModule,
