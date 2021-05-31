@@ -1,5 +1,5 @@
 .flex {
-  margin: 0;
+  padding-left: 100px;
   width: 75%;
   display: grid;
   grid-template-columns: repeat(4, 300px);
@@ -21,4 +21,15 @@
   transition: all .25s ease;
   border: 2px solid #fff;
 
+}
+
+pagination-controls {
+  margin: 0 auto;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.pagination_override /deep/ .current{
+  background-color: #DD1540;
+  border-radius: 5px;
 }

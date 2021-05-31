@@ -1,5 +1,8 @@
 <div class="flex">
-  <div class="card" *ngFor="let ad of Data | search: search | filtering: filters">
+  <div class="card"
+       *ngFor="let ad of Data | search: search | filtering: filters | paginate: {currentPage: page, totalItems: totalItems(), itemsPerPage: 12} ">
     <p>{{ad.model}}</p>
+
   </div>
+  <pagination-controls class=" pagination_override" (pageChange)="getPage($event)"></pagination-controls>
 </div>
