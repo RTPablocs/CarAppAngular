@@ -14,6 +14,10 @@ import { SearchPipe } from './pipes/search.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { FilteringPipe } from './pipes/filtering.pipe';
 import { FiltersComponent } from './components/filters/filters.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { LoginComponent } from './pages/login/login.component';
+import { HttpClientModule} from '@angular/common/http';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +31,18 @@ import { FiltersComponent } from './components/filters/filters.component';
     SearchPipe,
     CardsComponent,
     FilteringPipe,
-    FiltersComponent
+    FiltersComponent,
+    LoginComponent,
+    ProfileComponent
   ],
     imports: [
         BrowserModule,
         FontAwesomeModule,
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgxPaginationModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
