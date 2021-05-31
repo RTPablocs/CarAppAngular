@@ -1,8 +1,13 @@
 <nav class="nav-flex">
   <a id="main_link" routerLink="home">CarApp</a>
-  <div class="NavMenu">
+  <div class="NavMenu" *ngIf="!isLogged">
     <a  routerLink="/shop" class="Link">Shop</a>
-    <a class="Link">Login</a>
+    <a routerLink="/login" class="Link">Login</a>
     <a class="LinkAlt">Register</a>
+  </div>
+  <div class="NavMenu" *ngIf="isLogged">
+    <a  routerLink="/shop" class="Link">Shop</a>
+    <a routerLink="/profile" class="Link">Profile</a>
+    <a class="LinkAlt" (click)="executeLogout()">Logout</a>
   </div>
 </nav>
