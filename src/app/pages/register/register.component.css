@@ -1,0 +1,54 @@
+.vertical {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 260px auto;
+}
+
+.main {
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .2);
+  padding: 15px 20px 30px 20px;
+  border-radius: 35px;
+  width: 560px;
+  height: 350px;
+  min-width: 260px;
+  position: relative;
+  margin: 10% auto;
+  background: #fff;
+  scroll-snap-align: center;
+  transition: all .25s ease;
+  border: 2px solid #fff;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+label {
+  padding-top: 10px;
+
+}
+
+input {
+  border: 2px solid rgba(0, 0, 0, .2);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button {
+  position: relative;
+  top: 10px;
+  margin: auto;
+  padding: 5px;
+  border: none;
+  background-color: #DD1540;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
