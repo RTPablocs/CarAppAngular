@@ -1,0 +1,17 @@
+.background {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #252525;
+  position: relative;
+  top: 30px;
+}
+.avatarWindow{
+  border-radius: 50%;
+}
+fa-icon {
+  position: fixed;
+  left: 45%;
+  top: 30px;
+}
