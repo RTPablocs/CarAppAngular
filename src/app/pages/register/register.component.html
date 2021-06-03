@@ -1,1 +1,17 @@
-<p>register works!</p>
+<div class="main">
+  <h2>Register</h2>
+  <div class="grid">
+    <form class="vertical" [formGroup]="registerData">
+      <label>Username:</label>
+      <input type="text" formControlName="username" (keyup)="generateSubstring()">
+      <label>Mail:</label>
+      <input type="text" formControlName="email">
+      <label>Password:</label>
+      <input type="password" formControlName="password">
+      <label>Verify Password:</label>
+      <input type="password" formControlName="confirmPassword">
+    </form>
+    <app-avatars [name]="name"></app-avatars>
+  </div>
+  <button>Register</button>
+</div>
