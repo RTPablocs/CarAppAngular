@@ -15,11 +15,11 @@ import { CardsComponent } from './components/cards/cards.component';
 import { FilteringPipe } from './pipes/filtering.pipe';
 import { FiltersComponent } from './components/filters/filters.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AvatarsComponent } from './components/avatars/avatars.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +34,10 @@ import { AvatarsComponent } from './components/avatars/avatars.component';
     CardsComponent,
     FilteringPipe,
     FiltersComponent,
-    LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    AvatarsComponent
+    AvatarsComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,
