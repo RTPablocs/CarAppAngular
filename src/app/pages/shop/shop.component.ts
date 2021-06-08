@@ -1,45 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {Filters} from '../../pipes/filters';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {HttpService} from '../../services/http.service';
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
-export class ShopComponent implements OnInit {
-  content = [
-    {id: 1, model: 'AAA', brand: 'DSDF', price: 10444},
-    {id: 2, model: 'ASA', brand: 'DF'},
-    {id: 3, model: 'AFA', brand: 'DDF'},
-    {id: 4, model: 'AGA', brand: 'DASF'},
-    {id: 1, model: 'AAA', brand: 'DSDF'},
-    {id: 2, model: 'ASA', brand: 'DF'},
-    {id: 3, model: 'AFA', brand: 'DDF'},
-    {id: 4, model: 'AGA', brand: 'DASF'},
-    {id: 1, model: 'AAA', brand: 'DSDF'},
-    {id: 2, model: 'ASA', brand: 'DF'},
-    {id: 3, model: 'AFA', brand: 'DDF'},
-    {id: 4, model: 'AGA', brand: 'DASF'},
-    {id: 1, model: 'AAA', brand: 'DSDF'},
-    {id: 2, model: 'ASA', brand: 'DF'},
-    {id: 3, model: 'AFA', brand: 'DDF'},
-    {id: 4, model: 'AGA', brand: 'DASF'},
-    {id: 1, model: 'AAA', brand: 'DSDF'},
-    {id: 2, model: 'ASA', brand: 'DF'},
-    {id: 3, model: 'AFA', brand: 'DDF'},
-    {id: 4, model: 'AGA', brand: 'DASF'},
-    {id: 1, model: 'AAA', brand: 'DSDF'},
-    {id: 2, model: 'ASA', brand: 'DF'},
-    {id: 3, model: 'AFA', brand: 'DDF'},
-    {id: 4, model: 'AGA', brand: 'DASF'}
-  ];
+export class ShopComponent implements OnInit, OnDestroy {
+  content!: any;
   search = '';
   filters = {};
 
-  constructor() {
+  constructor(private http: HttpService) {
+
   }
 
   ngOnInit(): void {
+    this.http.getAllProducts()
+      .subscribe((data: { result: any; }) => {
+        this.content = data.result;
+      });
   }
 
   getCriteria(criteria: string): void {
@@ -49,5 +29,8 @@ export class ShopComponent implements OnInit {
   getFilters(filtering: object): void {
     this.filters = filtering;
     console.log(this.filters);
+  }
+
+  ngOnDestroy(): void {
   }
 }
