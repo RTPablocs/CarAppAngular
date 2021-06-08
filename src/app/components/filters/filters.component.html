@@ -2,18 +2,18 @@
   <h2>Filters</h2>
   <form class="vertical" [formGroup]="filters">
     <label>Brand:</label>
-    <input type="text" formControlName="brand">
+    <input type="text" formControlName="product_brand">
     <label>Model:</label>
-    <input type="text" formControlName="model">
+    <input type="text" formControlName="product_model">
 
 
     <div class="vertical">
-      <label>Budget: <input type="number" formControlName="price" value="{{filters.value.price}}" ></label>
-      <input type="range" formControlName="price" min="1000" max="100000" value="{{filters.value.price}}">
+      <label>Budget: <input type="number" formControlName="product_price" value="{{filters.value.product_price}}" ></label>
+      <input type="range" formControlName="product_price" min="1000" max="100000" value="{{filters.value.product_price}}">
     </div>
-      <label>Miles: <input type="number" formControlName="miles" value="{{filters.value.miles}}"></label>
+      <label>Miles: <input type="number" formControlName="product_miles" value="{{filters.value.product_miles}}"></label>
       <div class="vertical">
-        <input type="range" formControlName="miles" min="1000" max="100000" value="{{filters.value.miles}}">
+        <input type="range" formControlName="product_miles" min="1000" max="100000" value="{{filters.value.product_miles}}">
       </div>
 
       <div class="container">

@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {Filters} from '../../pipes/filters';
 
 
+
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
@@ -13,10 +14,10 @@ export class FiltersComponent implements OnInit {
   @Output() SendFilters = new EventEmitter<Filters>();
 
   filters = new FormGroup({
-    brand: new FormControl(null),
-    model: new FormControl(null),
-    price: new FormControl(null),
-    miles: new FormControl(null)
+    product_brand: new FormControl(null),
+    product_model: new FormControl(null),
+    product_price: new FormControl(null),
+    product_miles: new FormControl(null)
   });
 
   constructor() {
