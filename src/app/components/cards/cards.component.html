@@ -1,7 +1,19 @@
 <div class="flex">
   <div class="card"
        *ngFor="let ad of Data | search: search | filtering: filters | paginate: {currentPage: page, totalItems: totalItems(), itemsPerPage: 12} ">
-    <p>{{ad.model}}</p>
+    <p>{{ad.product_title}}</p>
+    <img src="https://images.ctfassets.net/wmdwnw6l5vg5/71jz89dFBIdA9KHrLh8T0h/ca42aacfbacf37d716e9dbb2e3981485/economy.png_h_250" alt="">
+    <div class="info">
+      <p><fa-icon [icon]="faEye"></fa-icon> {{ad.product_views}}</p>
+      <p><fa-icon [icon]="faTag"></fa-icon> {{ad.product_price}} $</p>
+      <p><fa-icon [icon]="faTachometerAlt"></fa-icon> {{ad.product_miles}} Miles</p>
+      <p><fa-icon [icon]="faCar"></fa-icon> {{ad.product_brand}}, {{ad.product_model}}</p>
+      <div class="button_container">
+        <button>Cart</button>
+        <button [routerLink]="['/product', ad.product_uid]">View</button>
+        <button>Cart</button>
+      </div>
+    </div>
 
   </div>
   <pagination-controls class=" pagination_override" (pageChange)="getPage($event)"></pagination-controls>
