@@ -10,8 +10,7 @@
   border-radius: 35px;
   width: 260px;
   min-width: 260px;
-  position: sticky;
-  margin: 0px 15px;
+  margin: 0 auto;
   background: #fff;
   scroll-snap-align: center;
   transition: all .25s ease;
