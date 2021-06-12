@@ -9,7 +9,7 @@
       <p><fa-icon [icon]="faTachometerAlt"></fa-icon> {{ad.product_miles}} Miles</p>
       <p><fa-icon [icon]="faCar"></fa-icon> {{ad.product_brand}}, {{ad.product_model}}</p>
       <div class="button_container">
-        <button>Cart</button>
+        <button (click)="this.cart.addToCart(ad)">Cart</button>
         <button [routerLink]="['/product', ad.product_uid]">View</button>
         <button>Cart</button>
       </div>
