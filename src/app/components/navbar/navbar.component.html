@@ -1,12 +1,14 @@
 <nav class="nav-flex">
   <a id="main_link" routerLink="home">CarApp</a>
   <div class="NavMenu" *ngIf="!isLogged">
-    <a  routerLink="/shop" class="Link">Shop</a>
+    <a routerLink="/shop" class="Link">Shop</a>
+    <a routerLink="/cart" class="Link">Cart({{this.cartQuantity}})</a>
     <a routerLink="/login" class="Link">Login</a>
-    <a class="LinkAlt">Register</a>
+    <a class="LinkAlt" routerLink="/register">Register</a>
   </div>
   <div class="NavMenu" *ngIf="isLogged">
-    <a  routerLink="/shop" class="Link">Shop</a>
+    <a routerLink="/shop" class="Link">Shop</a>
+    <a routerLink="/cart" class="Link">Cart({{this.cartQuantity}})</a>
     <a routerLink="/profile" class="Link">Profile</a>
     <a class="LinkAlt" (click)="executeLogout()">Logout</a>
   </div>
