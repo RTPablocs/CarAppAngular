@@ -1,1 +1,10 @@
-<p>login works!</p>
+<div class="main">
+  <h2>Login</h2>
+  <form class="vertical" [formGroup]="loginData">
+    <label>Email</label>
+    <input type="text" formControlName="email">
+    <label>Password</label>
+    <input type="password" formControlName="password">
+  </form>
+  <button (click)="getLogin()">Login</button>
+</div>
