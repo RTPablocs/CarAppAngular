@@ -15,11 +15,14 @@ import { CardsComponent } from './components/cards/cards.component';
 import { FilteringPipe } from './pipes/filtering.pipe';
 import { FiltersComponent } from './components/filters/filters.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AvatarsComponent } from './components/avatars/avatars.component';
-import { LoginComponent } from './pages/login/login.component';
+import { DetailsComponent } from './pages/details/details.component';
+import { CartComponent } from './pages/cart/cart.component';
+import {CartDataService} from './services/cart-data.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +37,12 @@ import { LoginComponent } from './pages/login/login.component';
     CardsComponent,
     FilteringPipe,
     FiltersComponent,
+    LoginComponent,
     ProfileComponent,
     RegisterComponent,
     AvatarsComponent,
-    LoginComponent
+    DetailsComponent,
+    CartComponent
   ],
     imports: [
         BrowserModule,
@@ -48,7 +53,7 @@ import { LoginComponent } from './pages/login/login.component';
         NgxPaginationModule,
         HttpClientModule
     ],
-  providers: [],
+  providers: [CartDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
