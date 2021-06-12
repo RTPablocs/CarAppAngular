@@ -1,0 +1,23 @@
+<div *ngIf="this.data.length > 0 ">
+  <h1>Cart</h1>
+<div class="grid_display">
+  <div *ngFor="let item of data" class="cart_item">
+    <h1>{{item.product_title}}</h1>
+    <p>{{item.product_price}}</p>
+    <p>{{item.product_brand}}</p>
+    <p>{{item.product_model}}</p>
+    <p>{{item.product_desc}}</p>
+    <button (click)="this.cart.deleteFromCart(item.product_uid)">-</button>
+    <input type="number" value="{{this.cart.calculateQuantity(item.product_uid)}}">
+    <button (click)="this.cart.addToCart(item)">+</button>
+  </div>
+</div>
+  <p>{{this.price}}</p>
+  <button (click)="deleteCart()">Default Cart 0</button>
+</div>
+
+<div *ngIf="this.data.length === 0" class="empty_message">
+  <h1>Your cart is empty</h1>
+  <button routerLink="/shop">Go to Shopping!</button>
+
+</div>
