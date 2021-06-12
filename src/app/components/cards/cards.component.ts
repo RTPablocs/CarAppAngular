@@ -3,6 +3,7 @@ import {faTag} from '@fortawesome/free-solid-svg-icons/faTag';
 import {faTachometerAlt} from '@fortawesome/free-solid-svg-icons/faTachometerAlt';
 import {faCar} from '@fortawesome/free-solid-svg-icons/faCar';
 import {faEye} from '@fortawesome/free-solid-svg-icons/faEye';
+import {CartDataService} from '../../services/cart-data.service';
 
 @Component({
   selector: 'app-cards',
@@ -33,7 +34,7 @@ export class CardsComponent implements OnInit, OnChanges{
     }
   }
 
-  constructor() {
+  constructor(public cart: CartDataService) {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
