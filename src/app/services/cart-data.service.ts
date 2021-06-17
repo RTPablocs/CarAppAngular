@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Product} from '../pages/shop/product';
+import {Product} from '../interfaces/product';
 import {BehaviorSubject} from 'rxjs';
 
 
@@ -13,6 +13,8 @@ export class CartDataService {
   currentPrice = this.initialPrice.asObservable();
   cartQuantity = new BehaviorSubject(0);
   currentQuantity = this.cartQuantity.asObservable();
+  showArray = new BehaviorSubject<any[]>([])
+  showArrayObservable = this.showArray.asObservable()
 
   constructor() {
   }
@@ -21,6 +23,7 @@ export class CartDataService {
   addToCart(item: Product): void {
     this.cartItems.push(item);
     this.calculateTotalPrice();
+    this.rectifyCart()
     this.cartQuantity.next(this.cartItems.length);
   }
 
@@ -28,16 +31,17 @@ export class CartDataService {
     const index = this.cartItems.map((item) => {
       return item.product_uid;
     }).indexOf(id);
-    // TODO Control cart index to prevent non-allowed deletion
-    this.cartItems.splice(index, 1);
-    this.calculateTotalPrice();
-    this.rectifyCart();
-    this.cartQuantity.next(this.cartItems.length);
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+      this.calculateTotalPrice();
+      this.rectifyCart();
+      this.cartQuantity.next(this.cartItems.length);
+    }
   }
 
-  rectifyCart(): Product[] {
+  rectifyCart(): void  {
     const preRect = new Set(this.cartItems.map(e => JSON.stringify(e)));
-    return Array.from(preRect).map(e => JSON.parse(e));
+    this.showArray.next(Array.from(preRect).map(e => JSON.parse(e)))
   }
 
   calculateTotalPrice(): void {
