@@ -50,8 +50,16 @@ img {
 }
 
 
+.button_container_login {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 10px;
+}
+
 .button_container {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-column-gap: 10px;
 }
+
+
