@@ -1,6 +1,6 @@
 import {Component, Output, OnInit, EventEmitter} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Filters} from '../../pipes/filters';
+import {Filters} from '../../interfaces/filters';
 
 
 

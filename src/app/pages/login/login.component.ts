@@ -25,4 +25,9 @@ export class LoginComponent implements OnInit {
     const password = this.loginData.value.password;
     this.auth.getLogin(email, password);
   }
+
+  getGoogleLogin():void{
+    this.auth.getGoogleLogin()
+  }
+
 }
