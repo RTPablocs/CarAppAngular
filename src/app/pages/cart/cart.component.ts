@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CartDataService} from '../../services/cart-data.service';
 
 @Component({
@@ -6,23 +6,31 @@ import {CartDataService} from '../../services/cart-data.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy{
   constructor(public cart: CartDataService) {
   }
 
   price = 0;
-  data = this.cart.rectifyCart();
+  data: any[] = [];
 
   ngOnInit(): void {
     this.cart.currentPrice.subscribe(
       value => this.price = value
     );
+    this.cart.showArrayObservable.subscribe(value => this.data = value);
   }
+
+
   deleteCart(): void {
     this.cart.cartItems.length = 0;
-    this.data.length = 0;
+    this.cart.showArray.next([]);
     this.cart.cartQuantity.next(0);
     this.cart.initialPrice.next(0);
+  }
+
+  ngOnDestroy(): void {
+    localStorage.setItem('cartItems', JSON.stringify(this.cart.cartItems))
+    localStorage.setItem('cartItemsShow', JSON.stringify(this.data))
   }
 }
 
