@@ -1,9 +1,11 @@
 import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core';
-import {faTag} from '@fortawesome/free-solid-svg-icons/faTag';
-import {faTachometerAlt} from '@fortawesome/free-solid-svg-icons/faTachometerAlt';
-import {faCar} from '@fortawesome/free-solid-svg-icons/faCar';
-import {faEye} from '@fortawesome/free-solid-svg-icons/faEye';
+import {faTag} from '@fortawesome/free-solid-svg-icons';
+import {faTachometerAlt} from '@fortawesome/free-solid-svg-icons';
+import {faCar} from '@fortawesome/free-solid-svg-icons';
+import {faEye} from '@fortawesome/free-solid-svg-icons';
+import {faBookmark} from '@fortawesome/free-solid-svg-icons';
 import {CartDataService} from '../../services/cart-data.service';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-cards',
@@ -34,10 +36,15 @@ export class CardsComponent implements OnInit, OnChanges{
     }
   }
 
-  constructor(public cart: CartDataService) {
+  isLogged = false
+
+  constructor(public cart: CartDataService, private auth: AuthService) {
   }
 
+
+
   ngOnChanges(changes: SimpleChanges): void {
+    this.auth.loggedObservable.subscribe(value => this.isLogged = value)
     this.page = 1;
   }
 
