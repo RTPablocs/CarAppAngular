@@ -1,19 +1,23 @@
-<div *ngIf="this.data.length > 0 ">
-  <h1>Cart</h1>
-<div class="grid_display">
-  <div *ngFor="let item of data" class="cart_item">
-    <h1>{{item.product_title}}</h1>
-    <p>{{item.product_price}}</p>
-    <p>{{item.product_brand}}</p>
-    <p>{{item.product_model}}</p>
-    <p>{{item.product_desc}}</p>
-    <button (click)="this.cart.deleteFromCart(item.product_uid)">-</button>
-    <input type="number" value="{{this.cart.calculateQuantity(item.product_uid)}}">
-    <button (click)="this.cart.addToCart(item)">+</button>
+<div *ngIf="this.data.length > 0 " class="cart_structure">
+  <div class="grid_display">
+    <div *ngFor="let item of data" class="cart_item">
+      <h1>{{item.product_title}}</h1>
+      <p>{{item.product_price}}</p>
+      <p>{{item.product_brand}}</p>
+      <p>{{item.product_model}}</p>
+      <p>{{item.product_desc}}</p>
+      <div class="cart_controls">
+        <button (click)="this.cart.deleteFromCart(item.product_uid)">-</button>
+        <p>{{this.cart.calculateQuantity(item.product_uid)}}</p>
+        <button (click)="this.cart.addToCart(item)">+</button>
+      </div>
+    </div>
   </div>
-</div>
-  <p>{{this.price}}</p>
-  <button (click)="deleteCart()">Default Cart 0</button>
+  <div class="cart_sum">
+    <h1>Cart</h1>
+    <p>Grand Total: {{this.price}}</p>
+    <button (click)="deleteCart()">Default Cart 0</button>
+  </div>
 </div>
 
 <div *ngIf="this.data.length === 0" class="empty_message">
