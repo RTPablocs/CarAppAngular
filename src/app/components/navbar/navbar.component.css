@@ -3,11 +3,9 @@
   src: url("src/assets/urae_nium.ttf") format("truetype");
 }
 
-
-
-
-
 nav {
+  position: sticky;
+  top:0;
   background: #252525;
   height: 80px;
   display: flex;
